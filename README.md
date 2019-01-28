@@ -7,7 +7,7 @@ Spartan Messenger using GRPC in Python3 is a console group chat application. Use
 - Start chatting
 
 # Execute in this order
-- python3 charServer.py 3000
+- python3 CharServer.py 3000
 - python3 chatClient.py 3001
 - python3 chatClient.py 3002
 - python3 chatClient.py 3003
