@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+message OutgoingMessage
+{
+    bytes name = 1;
+    bytes outgoingMsg = 2;
+}
+
+message ClientInfo
+{
+    string name = 1;
+}
+
+message LoginStatus
+{
+    string name = 1;
+    bool status = 2;
+    string welcome_message = 3;
+}
+
+message Empty{}
+
+service Chat {
+  rpc sendMessage (OutgoingMessage) returns (Empty) {};
+  rpc waitForMessage (ClientInfo) returns (stream OutgoingMessage) {};
+  rpc loginToChat (ClientInfo) returns (stream LoginStatus) {};
+  rpc welcomeClient (ClientInfo) returns (stream OutgoingMessage) {};
+}
